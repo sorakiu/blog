@@ -56,18 +56,15 @@ The combination of Tailscale + Caddy wildcard certs means I get:
 
 
 
-```mermaid
-graph LR
-    Internet -->|blocked| Firewall
-    YourDevices -->|Tailscale| Pi
-    Pi --> Caddy
-    Caddy --> code-server
-    Caddy --> dozzle
-    Caddy --> actual
-    Caddy --> "Home (nginx)"
-    Caddy --> TeslaMate
-    Caddy --> Grafana
-    Caddy --> "Uptime Kuma"
+```
+Internet → (blocked) → Firewall
+YourDevices → (Tailscale) → Pi → Caddy → code-server
+                                        → dozzle
+                                        → actual
+                                        → Home (nginx)
+                                        → TeslaMate
+                                        → Grafana
+                                        → Uptime Kuma
 ```
 
 ## Keeping Services Organized with Separate Compose Files
