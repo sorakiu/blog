@@ -29,17 +29,14 @@ main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.he
 <li>Zero public exposure</li>
 <li>Easy access from my phone, laptop, or any device I’ve added to my tailnet</li>
 </ul>
-<pre class="mermaid">graph LR
-    Internet -->|blocked| Firewall
-    YourDevices -->|Tailscale| Pi
-    Pi --> Caddy
-    Caddy --> code-server
-    Caddy --> dozzle
-    Caddy --> actual
-    Caddy --> "Home (nginx)"
-    Caddy --> TeslaMate
-    Caddy --> Grafana
-    Caddy --> "Uptime Kuma"</pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Internet → (blocked) → Firewall</span></span>
+<span class="line"><span>YourDevices → (Tailscale) → Pi → Caddy → code-server</span></span>
+<span class="line"><span>                                        → dozzle</span></span>
+<span class="line"><span>                                        → actual</span></span>
+<span class="line"><span>                                        → Home (nginx)</span></span>
+<span class="line"><span>                                        → TeslaMate</span></span>
+<span class="line"><span>                                        → Grafana</span></span>
+<span class="line"><span>                                        → Uptime Kuma</span></span></code></pre>
 <h2 id="keeping-services-organized-with-separate-compose-files">Keeping Services Organized with Separate Compose Files</h2>
 <p>Not everything lives in the main <code>docker-compose.yml</code>. I organize services into their own directories, each with their own compose file. The folder structure looks like this:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>~/docker/</span></span>
