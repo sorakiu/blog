@@ -8,4 +8,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://blog.david-moore.me',
 	integrations: [mdx(), sitemap()],
+	markdown: {
+		rehypePlugins: [rehypeMermaid],
+	},
 });
